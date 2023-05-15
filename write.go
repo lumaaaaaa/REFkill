@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	CsvHeader = "Name,Can-ID,Units,Start Bit,Length,Offset,Scale,Maximum,Minimum,Data Format,Byte Order,Data Length Code\n"
+	CsvHeader = "Name,Can-ID,Units,Start Byte,Start Bit,Length,Offset,Scale,Maximum,Minimum,Data Format,Byte Order,Data Length Code\n"
 )
 
 func writeCSV(signals []CanSignal) bool {
@@ -25,11 +25,12 @@ func writeCSV(signals []CanSignal) bool {
 	}
 
 	for _, signal := range signals {
-		_, err = f.WriteString(fmt.Sprintf("%s,%d,%s,%d,%d,%f,%f,%f,%f,%s,%s,%d\n",
+		_, err = f.WriteString(fmt.Sprintf("%s,%d,%s,%d,%d,%d,%f,%f,%f,%f,%s,%s,%d\n",
 			signal.Name,
 			signal.CanID,
 			signal.Units,
-			signal.StartBit,
+			signal.StartBit/8, // start byte
+			signal.StartBit%8, // start bit
 			signal.Length,
 			signal.Offset,
 			signal.Scale,
