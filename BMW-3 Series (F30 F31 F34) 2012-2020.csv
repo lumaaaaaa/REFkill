@@ -1,0 +1,23 @@
+Name,Can-ID,Units,Start Byte,Start Bit,Length,Offset,Scale,Maximum,Minimum,Data Format,Byte Order,Data Length Code
+Air_Pressure,1019,mbar,0,0,8,598.000000,2.000000,1106.000000,600.000000,Unsigned,Intel,8
+Air_Temperature,714,°C,1,0,8,-40.000000,0.500000,85.000000,-40.000000,Unsigned,Intel,8
+Battery_Voltage,641,mV,0,0,12,0.000000,15.000000,60000.000000,0.000000,Unsigned,Intel,8
+Brake_Position,371,,7,0,6,0.000000,1.000000,63.000000,0.000000,Unsigned,Intel,8
+Gear,1017,,6,0,4,-4.000000,1.000000,11.000000,0.000000,Unsigned,Intel,8
+Oil_Temperature,1017,°C,5,0,8,-48.000000,1.000000,170.000000,-48.000000,Unsigned,Intel,8
+Transmission_Oil_Temperature,922,°C,1,0,8,-48.000000,1.000000,170.000000,-40.000000,Unsigned,Intel,8
+Indicated_Longitudinal_Acceleration,409,m/s²,2,0,16,-65.000000,0.002000,65.000000,-65.000000,Unsigned,Intel,8
+Indicated_Lateral_Acceleration,410,m/s²,2,0,16,-65.000000,0.002000,65.000000,-65.000000,Unsigned,Intel,8
+Engine_Speed,243,rpm,1,4,12,0.000000,10.000000,10000.000000,0.000000,Unsigned,Intel,8
+Indicated_Vehicle_Speed_kph,417,km/h,2,0,16,0.000000,0.015625,350.000000,0.000000,Unsigned,Intel,8
+Wheel_Speed_FL_kph,596,km/h,4,0,15,0.000000,0.015625,1000.000000,0.000000,Signed,Intel,8
+Wheel_Speed_FR_kph,596,km/h,6,0,15,0.000000,0.015625,1000.000000,0.000000,Signed,Intel,8
+Wheel_Speed_RL_kph,596,km/h,0,0,15,0.000000,0.015625,1000.000000,0.000000,Signed,Intel,8
+Wheel_Speed_RR_kph,596,km/h,2,0,15,0.000000,0.015625,1000.000000,0.000000,Signed,Intel,8
+Steering_Angle,769,°,2,0,16,-1440.110000,0.043950,1440.110000,-1440.110000,Unsigned,Intel,8
+Throttle_Position,217,%,2,0,12,0.000000,0.025000,100.000000,0.000000,Unsigned,Intel,8
+Indicated_Vehicle_Speed_mph,417,mph,2,0,16,0.000000,0.009703,217.350000,0.000000,Unsigned,Intel,8
+Wheel_Speed_FL_mph,596,mph,4,0,15,0.000000,0.009703,621.000000,0.000000,Signed,Intel,8
+Wheel_Speed_FR_mph,596,mph,6,0,15,0.000000,0.009703,621.000000,0.000000,Signed,Intel,8
+Wheel_Speed_RL_mph,596,mph,0,0,15,0.000000,0.009703,621.000000,0.000000,Signed,Intel,8
+Wheel_Speed_RR_mph,596,mph,2,0,15,0.000000,0.009703,621.000000,0.000000,Signed,Intel,8
