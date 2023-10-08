@@ -5,15 +5,31 @@ import (
 	"os"
 )
 
-const (
-	filename = "BMW-3 Series (F30 F31 F34) 2012-2020.REF"
+var (
+	fileName string
 )
 
+func printHelp() {
+	fmt.Println()
+	fmt.Println("Usage:")
+	fmt.Println("  REFkill [input file .REF]")
+
+	os.Exit(0)
+}
+
 func main() {
-	fmt.Println("(*) REFkill - v1.1 - Debug Build")
+	fmt.Println("(*) REFkill - v1.2 - Release Build")
+
+	args := os.Args[1:]
+
+	if len(args) == 0 {
+		printHelp()
+	}
+
+	fileName = args[0]
 
 	// Open encrypted .REF file
-	file, err := os.Open(filename)
+	file, err := os.Open(fileName)
 	if err != nil {
 		panic(err)
 	}
@@ -24,12 +40,12 @@ func main() {
 	if text == "Racelogic Can Data File V1a" {
 		success := parseREF(file)
 		if success {
-			fmt.Println("(!) Successfully decrypted", "'"+filename+"', wrote data to", "'"+filename[:len(filename)-4]+".csv'")
+			fmt.Println("(!) Successfully decrypted", "'"+fileName+"', wrote data to", "'"+fileName[:len(fileName)-4]+".csv'")
 		} else {
-			fmt.Println("(x) Failed to decrypt", "'"+filename+"'! Ensure the file data is correct.")
+			fmt.Println("(x) Failed to decrypt", "'"+fileName+"'! Ensure the file data is correct.")
 			os.Exit(1)
 		}
 	} else {
-		fmt.Println("(x) File", "'"+filename+"'", "does not appear to be a valid Racelogic Can Data File (V1a).")
+		fmt.Println("(x) File", "'"+fileName+"'", "does not appear to be a valid Racelogic Can Data File (V1a).")
 	}
 }

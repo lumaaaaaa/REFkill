@@ -14,7 +14,7 @@ func writeCSV(signals []CanSignal) bool {
 		return false
 	}
 
-	f, err := os.Create(filename[:len(filename)-4] + ".csv")
+	f, err := os.Create(fileName[:len(fileName)-4] + ".csv")
 	if err != nil {
 		return false
 	}
